@@ -52,12 +52,6 @@ h1 {
     color: white;
 }
 
-.subtitle {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-bottom: 32px;
-}
-
 .lang-switch {
     display: flex;
     gap: 8px;
@@ -122,17 +116,16 @@ a:hover { text-decoration: underline; }
 <div class="container">
     <div class="card">
 
-        <div id="en" class="lang active">
-            <div class="header">
-            <h1>Privacy Policy</h1>
+        <div class="header">
+            <h1 id="page-title">Privacy Policy</h1>
             <div class="lang-switch">
                 <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
                 <button id="btn-ru" onclick="switchLang('ru')">RU</button>
             </div>
         </div>
-            
+
         <!-- ENGLISH -->
-        
+        <div id="en" class="lang active">
             <p>EazzySpeach respects your privacy and is committed to protecting it.</p>
 
             <h2>Information We Collect</h2>
@@ -173,6 +166,7 @@ a:hover { text-decoration: underline; }
         </div>
 
         <!-- RUSSIAN -->
+        <div id="ru" class="lang">
             <p>EazzySpeach уважает вашу конфиденциальность и обязуется защищать её.</p>
 
             <h2>Какие данные мы собираем</h2>
@@ -221,13 +215,22 @@ a:hover { text-decoration: underline; }
 
 <script>
 function switchLang(lang) {
-    document.getElementById("en").classList.remove("active");
-    document.getElementById("ru").classList.remove("active");
-    document.getElementById("btn-en").classList.remove("active");
-    document.getElementById("btn-ru").classList.remove("active");
+    const title = document.getElementById("page-title");
+    const btnEn = document.getElementById("btn-en");
+    const btnRu = document.getElementById("btn-ru");
 
-    document.getElementById(lang).classList.add("active");
-    document.getElementById("btn-" + lang).classList.add("active");
+    if(lang === 'en') {
+        title.textContent = "Privacy Policy";
+        btnEn.classList.add("active");
+        btnRu.classList.remove("active");
+    } else {
+        title.textContent = "Политика конфиденциальности";
+        btnEn.classList.remove("active");
+        btnRu.classList.add("active");
+    }
+
+    document.getElementById("en").classList.toggle("active", lang === 'en');
+    document.getElementById("ru").classList.toggle("active", lang === 'ru');
 }
 </script>
 </body>

@@ -1,126 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Privacy Policy – EazzySpeach</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Privacy Policy – EazzySpeach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-color: #111827;
-            --text-color: #e5e7eb;
-            --muted-text: #9ca3af;
-            --accent: #38bdf8;
-            --border: #1f2933;
-        }
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #38bdf8;
+    --border: #1f2937;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+* { box-sizing: border-box; }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(180deg, #020617, #020617);
-            color: var(--text-color);
-            line-height: 1.7;
-        }
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #020617, #020617);
+    color: var(--text);
+    line-height: 1.7;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 48px 20px;
-        }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
-        .card {
-            background: rgba(17, 24, 39, 0.9);
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
+.card {
+    background: rgba(17, 24, 39, 0.95);
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
 
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 8px;
-            color: white;
-        }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
 
-        .subtitle {
-            color: var(--muted-text);
-            margin-bottom: 32px;
-            font-size: 0.95rem;
-        }
+h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: white;
+}
 
-        h2 {
-            margin-top: 36px;
-            font-size: 1.4rem;
-            color: var(--accent);
-        }
+.subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+}
 
-        p {
-            margin-top: 12px;
-        }
+.lang-switch {
+    display: flex;
+    gap: 8px;
+}
 
-        ul {
-            margin-top: 12px;
-            padding-left: 20px;
-        }
+.lang-switch button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
 
-        li {
-            margin-bottom: 8px;
-        }
+.lang-switch button.active {
+    background: var(--accent);
+    color: #020617;
+    border-color: var(--accent);
+}
 
-        .footer {
-            margin-top: 48px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--muted-text);
-        }
+h2 {
+    margin-top: 36px;
+    font-size: 1.3rem;
+    color: var(--accent);
+}
 
-        .email {
-            color: var(--accent);
-            text-decoration: none;
-        }
+p { margin-top: 12px; }
 
-        .email:hover {
-            text-decoration: underline;
-        }
+ul {
+    margin-top: 12px;
+    padding-left: 20px;
+}
 
-        @media (max-width: 600px) {
-            .card {
-                padding: 24px;
-            }
+li { margin-bottom: 8px; }
 
-            h1 {
-                font-size: 1.9rem;
-            }
-        }
-    </style>
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.lang {
+    display: none;
+}
+.lang.active {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .card { padding: 24px; }
+    h1 { font-size: 1.8rem; }
+}
+</style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <h1>Privacy Policy</h1>
-            <div class="subtitle">
-                EazzySpeach · Effective date: January 2026
-            </div>
+<div class="container">
+    <div class="card">
 
-            <p>
-                EazzySpeach ("we", "our", or "us") respects your privacy and is committed to protecting it.
-            </p>
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <div class="lang-switch">
+                <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+                <button id="btn-ru" onclick="switchLang('ru')">RU</button>
+            </div>
+        </div>
+
+        <div class="subtitle">
+            EazzySpeach · Effective date: January 2026
+        </div>
+
+        <!-- ENGLISH -->
+        <div id="en" class="lang active">
+            <p>EazzySpeach ("we", "our", or "us") respects your privacy and is committed to protecting it.</p>
 
             <h2>Information We Collect</h2>
-            <p>
-                EazzySpeach does not collect, store, or share any personally identifiable information.
-            </p>
-            <p>
-                The app processes only the text content provided by the user for AI-powered translation.
-                This text is sent to a trusted third-party service solely to perform the requested translation.
-            </p>
+            <p>EazzySpeach does not collect, store, or share any personally identifiable information.</p>
+            <p>The app processes only the text content provided by the user solely for AI-powered translation purposes. This text is sent to trusted third-party services only to perform the requested translation.</p>
 
             <h2>Data Usage</h2>
             <ul>
@@ -130,54 +150,89 @@
             </ul>
 
             <h2>Advertising</h2>
-            <p>
-                EazzySpeach displays ads using Google AdMob.
-            </p>
-            <p>
-                AdMob may collect anonymous device identifiers and usage data for ad delivery,
-                frequency capping, and performance measurement, in accordance with Google’s Privacy Policy.
-            </p>
+            <p>EazzySpeach displays advertisements using Google AdMob.</p>
+            <p>Google AdMob may collect anonymous device identifiers and usage data for ad delivery, frequency capping, and performance measurement, in accordance with Google’s Privacy Policy.</p>
 
             <h2>App Tracking Transparency</h2>
-            <p>
-                If required by law or platform policy, EazzySpeach will request user permission
-                before enabling ad tracking, in compliance with Apple’s App Tracking Transparency framework.
-            </p>
+            <p>If required by law or platform policy, EazzySpeach will request user permission before enabling ad tracking, in compliance with Apple’s App Tracking Transparency framework.</p>
 
             <h2>Third-Party Services</h2>
             <ul>
-                <li>OpenAI API — AI-powered text translation</li>
-                <li>Google AdMob — advertising services</li>
+                <li><strong>OpenAI API</strong> — AI-powered text translation</li>
+                <li><strong>Microsoft Translator (Azure Cognitive Services)</strong> — text translation</li>
+                <li><strong>Google AdMob</strong> — advertising services</li>
             </ul>
-            <p>
-                These services operate under their own privacy policies.
-            </p>
+            <p>These services operate under their own respective privacy policies.</p>
 
             <h2>Children’s Privacy</h2>
-            <p>
-                EazzySpeach does not knowingly collect personal data from children under the age of 13.
-            </p>
+            <p>EazzySpeach does not knowingly collect personal data from children under the age of 13.</p>
 
             <h2>Changes to This Policy</h2>
-            <p>
-                This Privacy Policy may be updated from time to time.
-                Any changes will be published on this page.
-            </p>
+            <p>This Privacy Policy may be updated from time to time. Any changes will be published on this page.</p>
 
             <h2>Contact</h2>
-            <p>
-                If you have any questions about this Privacy Policy, please contact:
-            </p>
-            <p>
-                <a class="email" href="mailto:support@eazzyspeach.app">
-                    support@eazzyspeach.app
-                </a>
-            </p>
+            <p>If you have any questions about this Privacy Policy, please contact:</p>
+            <p><a href="mailto:support@eazzyspeach.app">support@eazzyspeach.app</a></p>
         </div>
 
-        <div class="footer">
-            © 2026 EazzySpeach
+        <!-- RUSSIAN -->
+        <div id="ru" class="lang">
+            <p>EazzySpeach («мы», «наш» или «нас») уважает вашу конфиденциальность и обязуется защищать её.</p>
+
+            <h2>Какие данные мы собираем</h2>
+            <p>EazzySpeach не собирает, не хранит и не передаёт персональные данные пользователей.</p>
+            <p>Приложение обрабатывает только текст, предоставленный пользователем, исключительно с целью AI-перевода. Этот текст передаётся надёжным сторонним сервисам только для выполнения запрошенного перевода.</p>
+
+            <h2>Использование данных</h2>
+            <ul>
+                <li>Переведённый текст не хранится на наших серверах</li>
+                <li>Текстовые данные используются только для работы функции перевода</li>
+                <li>Персональные данные не продаются и не передаются третьим лицам</li>
+            </ul>
+
+            <h2>Реклама</h2>
+            <p>EazzySpeach отображает рекламу с использованием Google AdMob.</p>
+            <p>Google AdMob может собирать анонимные идентификаторы устройства и данные об использовании приложения для показа рекламы, ограничения частоты показов и измерения эффективности в соответствии с Политикой конфиденциальности Google.</p>
+
+            <h2>App Tracking Transparency</h2>
+            <p>Если это требуется законодательством или правилами платформы, EazzySpeach запрашивает разрешение пользователя перед включением рекламного трекинга в соответствии с фреймворком Apple App Tracking Transparency.</p>
+
+            <h2>Сторонние сервисы</h2>
+            <ul>
+                <li><strong>OpenAI API</strong> — AI-перевод текста</li>
+                <li><strong>Microsoft Translator (Azure Cognitive Services)</strong> — перевод текста</li>
+                <li><strong>Google AdMob</strong> — рекламные сервисы</li>
+            </ul>
+            <p>Эти сервисы действуют в соответствии со своими собственными политиками конфиденциальности.</p>
+
+            <h2>Конфиденциальность детей</h2>
+            <p>EazzySpeach сознательно не собирает персональные данные детей младше 13 лет.</p>
+
+            <h2>Изменения в политике</h2>
+            <p>Настоящая Политика конфиденциальности может время от времени обновляться. Все изменения будут опубликованы на этой странице.</p>
+
+            <h2>Контакты</h2>
+            <p>Если у вас есть вопросы, связанные с Политикой конфиденциальности, свяжитесь с нами:</p>
+            <p><a href="mailto:support@eazzyspeach.app">psiopss94@gmail.com</a></p>
         </div>
+
     </div>
+
+    <div class="footer">
+        © 2026 EazzySpeach
+    </div>
+</div>
+
+<script>
+function switchLang(lang) {
+    document.getElementById("en").classList.remove("active");
+    document.getElementById("ru").classList.remove("active");
+    document.getElementById("btn-en").classList.remove("active");
+    document.getElementById("btn-ru").classList.remove("active");
+
+    document.getElementById(lang).classList.add("active");
+    document.getElementById("btn-" + lang).classList.add("active");
+}
+</script>
 </body>
 </html>

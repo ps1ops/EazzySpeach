@@ -105,9 +105,23 @@ a:hover { text-decoration: underline; }
     display: block;
 }
 
+/* Мобильная версия */
 @media (max-width: 600px) {
     .card { padding: 24px; }
     h1 { font-size: 1.8rem; }
+
+    .header {
+        flex-direction: column; /* элементы вертикально */
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .lang-switch {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 8px;
+    }
 }
 </style>
 </head>
@@ -116,6 +130,7 @@ a:hover { text-decoration: underline; }
 <div class="container">
     <div class="card">
 
+        <!-- Header с переключением языка -->
         <div class="header">
             <h1 id="page-title">Privacy Policy</h1>
             <div class="lang-switch">
